@@ -1,10 +1,13 @@
 language: python
 python:
-  - 3.6
+- 3.6
 install:
-  - pip install -q -r requirements-dev.txt codecov
+- pip install -q -r requirements-dev.txt codecov
 script:
-  - flake8 .
-  - pytest --cov .
+- flake8 .
+- pytest --cov .
 after_success:
-  - codecov
+- codecov
+notifications:
+  slack:
+    secure: N1FSOkWfXPIjWGkmMLacsaveagakquBnNvuos1SyETHGQTaV/9BHy6VuH4IF0UxGOWlrs1uiDej51h2Zrpk5L/HLvq1krdmAIqoUDOIVEoR+c/OOktpuildQHs8Nmdy9ZEaX/vy0R+4pQketYrMfzCQ2ef/Bn6/a5s7BrVrXHk/BivbF4fJswCJ9j1oa1pcKZRHvWUQYTcYG2FWRz4Yx3BgFTR/1k4qq/s8AOzsXnRonmhZJ5r75nwvD6Xp6AJ6WA+/JeyMOVzHoDzYNtwypnmscFlet4BsZzcw3oMEnC9qPKZ49Wbg6/2C9dxfuJGtidsq27lh7B2KiiymxkMNaKqX6mvUHTKhCxa7M9alVLWLaZB1wA8A1VGj7bs8zY37obrLe2cHBpPRPIHelXhbiEZI5Jchp6K6k+gcabNg8ozsBdxGO3KvxKwY+N1SqcWehYuU+pLdrc8xElKJPoYG+7FmSf8vsZQovDbZKV1wtWRK3LO8jPuAfxEx9V9z40JrthidkMwEPQZ/NHtRmxJCJ6t9Q2OOGA7tkDVCSEoWdy2ZUjOaJTzHt9jSUbZ3vd2cVFdW1VMNi9yW0zJ0MUmeL8HXIMbK+/NYtYjrCrhU4nli5xc888tHDV1qAZOWLDs9nnsubbsC+pZBFEgq6hXTubIeM9r3a6WxSLDBjuH8PuJc=
