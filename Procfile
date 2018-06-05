@@ -1,1 +1,1 @@
-web: gunicorn pythonpro.wsgi --log-file -
+web: gunicorn certgen.wsgi --log-file -
