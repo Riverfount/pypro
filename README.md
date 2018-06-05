@@ -1,3 +1,4 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/vmdesenvolvimento/certgen.png?columns=all)](https://waffle.io/vmdesenvolvimento/certgen?utm_source=badge)
 # CertGen - Django Project to build an App that Generates and Manage an Issue of Certificates 
 
 [![Build Status](https://travis-ci.org/vmdesenvolvimento/certgen.svg?branch=master)](https://travis-ci.org/vmdesenvolvimento/certgen)
