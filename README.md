@@ -1,4 +1,3 @@
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/vmdesenvolvimento/certgen.png?columns=all)](https://waffle.io/vmdesenvolvimento/certgen?utm_source=badge)
 # CertGen - Django Project to build an App that Generates and Manage an Issue of Certificates 
 
 [![Build Status](https://travis-ci.org/vmdesenvolvimento/certgen.svg?branch=master)](https://travis-ci.org/vmdesenvolvimento/certgen)
@@ -8,6 +7,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
 [![PyPI - Python Version](https://img.shields.io/badge/Python%20Version-3.6.5-blue.svg?style=flat-square)](https://github.com/Riverfount/pypro)
 [![PyPI - Django Version](https://img.shields.io/badge/Django%20Version-2.0.6-blue.svg?style=flat-square)](https://github.com/Riverfount/pypro)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/vmdesenvolvimento/certgen.png?columns=all)](https://waffle.io/vmdesenvolvimento/certgen?utm_source=badge)
 
 ## If you want to contribute you need to do:
 
