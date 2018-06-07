@@ -69,7 +69,7 @@ discussion.
 ```
 ... now work to implement the task of the issue ...
 
-```cosole
+```console
 (.venv) ~/certege (master)/$ git add .
 (.venv) ~/certege (master)/$ git commit -m 'A message that expose what do you do'
 (.venv) ~/certege (master)/$ git push origin master
