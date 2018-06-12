@@ -26,8 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'collectfast',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'certgen.core',
 ]
 
@@ -108,43 +109,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-COLLECTFAST_ENABLED = False
-
-# STORAGE CONFIGURATION IN S3 AWS
-# ------------------------------------------------------------------------------
-# Uploaded Media Files
-# ------------------------------------------------------------------------------
-AWS_ACCESS_KEY_ID = config('DJANGO_AWS_ACCESS_KEY_ID')
-if AWS_ACCESS_KEY_ID:  # pragma: no cover
-    COLLECTFAST_ENABLED = True
-    INSTALLED_APPS.append('s3_folder_storage')
-    INSTALLED_APPS.append('storages')
-    AWS_SECRET_ACCESS_KEY = config('DJANGO_AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = config('DJANGO_AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400', }
-    AWS_PRELOAD_METADATA = True
-    AWS_AUTO_CREATE_BUCKET = False
-    AWS_QUERYSTRING_AUTH = False
-
-    # AWS cache settings, don't change unless you know what you're doing:
-    AWS_EXPIRY = 60 * 60 * 24 * 7
-
-    # Revert the following and use str after the above-mentioned bug is fixed in
-    # either django-storage-redux or boto
-    control = f'max-age={AWS_EXPIRY:d}, s-maxage={AWS_EXPIRY:d}, must-revalidate'
-
-    # Upload Media Folder
-    DEFAULT_FILE_STORAGE = 's3_folder_storage.s3.DefaultStorage'
-    DEFAULT_S3_PATH = 'media'
-    MEDIA_ROOT = f'/{DEFAULT_S3_PATH}/'
-    MEDIA_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{DEFAULT_S3_PATH}/'
-
-    # Static Assets
-    # ------------------------------------------------------------------------------
-    STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
-    STATIC_S3_PATH = 'static'
-    STATIC_ROOT = f'/{STATIC_S3_PATH}/'
-    STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
-    ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
-# ------------------------------------------------------------------------------
+# Cloudinary config
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+# Cloudinary credentials
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUD_NAME'),
+    'API_KEY': config('API_KEY'),
+    'API_SECRET': config('API_SECRET')
+}
