@@ -19,8 +19,9 @@ Make sure that the Python >= 3.6.5 was installed.
 5. Create a virtualenv with Python >= 3.6.5
 6. Active the virtualenv
 7. Install the dependencies of the project
-8. Make sure that the code agrees with the PEP8 recommendations
-9. Make sure that the test will pass with codecov coverage
+8. Create a .env with a copy of contrib/env-sample
+9. Make sure that the code agrees with the PEP8 recommendations
+10. Make sure that the test will pass with codecov coverage
 
 ### These steps as a code:
 
@@ -31,6 +32,7 @@ cd certgen
 python -m venv .venv
 source .venv/bin/activatte
 pip install -r requirements-dev.txt
+cp contrib/env-sample .env
 flake8 .
 pytest --cov .
 ```
