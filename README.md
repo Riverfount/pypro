@@ -27,10 +27,10 @@ Make sure that the Python >= 3.6.5 was installed.
 
 ```console
 git clone [address to your remote fork repo]
-git remote add upsream git@github.com:vmdesenvolvimento/certgen.git
+git remote add upstream git@github.com:vmdesenvolvimento/certgen.git
 cd certgen 
 python -m venv .venv
-source .venv/bin/activatte
+source .venv/bin/activate
 pip install -r requirements-dev.txt
 cp contrib/env-sample .env
 flake8 .
