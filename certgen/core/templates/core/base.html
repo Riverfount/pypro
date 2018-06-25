@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}CertGen{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%} "/>
+    <link rel="stylesheet" href="{%static 'css/main.css'%}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+<body>
+<!-- Header -->
+<div class="container-fluid bg-topo">
+    <header class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a href="{% url 'home' %}" class="navbar-brand">
+                <img src="{% static 'img/logo.png' %}" alt="Logomarca" class="display-block" height="40px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
+                    aria-expanded="false" aria-label="Menu Collapsed">
+                <span class="navbar-toggler-icon text-light"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mr-auto text-light">
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}#servicos" class="nav-link text-light font-weight-bold">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}#parceiros" class="nav-link text-light font-weight-bold">Parceiros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}#planos" class="nav-link text-light font-weight-bold">Planos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'home' %}#contatos" class="nav-link text-light font-weight-bold">Contatos</a>
+                    </li>
+                </ul>
+                <a href="#" class="btn col-md-3  btn-login">Faça seu Login</a>
+            </div>
+        </nav>
+    </header>
+</div>
+
+{% block content %} {% endblock content %}
+
+
+<!--Seção Footer-->
+<a name="contatos"></a>
+<div class="container-fluid bg-dark">
+    <div class="my-2 py-4">
+        <section class="container">
+            <footer>
+                <h4 class="text-light">Precisamos implemenar o footer com os contatos</h4>
+            </footer>
+        </section>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
