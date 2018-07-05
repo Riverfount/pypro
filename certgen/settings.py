@@ -42,6 +42,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+if DEBUG:
+    # Django Debug ToolBar
+    INSTALLED_APPS.append('debug_toolbar')
+    INTERNAL_IPS = '127.0.0.1'
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+
+
 ROOT_URLCONF = 'certgen.urls'
 
 TEMPLATES = [

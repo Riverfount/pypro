@@ -1,4 +1,4 @@
-DEBUG=True
+DEBUG=False
 SECRET_KEY=Change for a secret here
 ALLOWED_HOSTS=localhost, 127.0.0.1
 SENTRY_DSN=
