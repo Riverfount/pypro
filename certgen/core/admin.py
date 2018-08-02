@@ -24,8 +24,8 @@ class UserAdmin(admin.ModelAdmin):
     change_user_password_template = None
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        (_('Personal info'), {'fields': ('first_name', 'last_name', 'email')}),
-        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
+        (_('Personal info'), {'fields': ('first_name', 'last_name')}),
+        (_('Permissions'), {'fields': ('is_active', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
@@ -61,18 +61,20 @@ class UserAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         return [
-            path(
-                '<id>/password/',
-                self.admin_site.admin_view(self.user_change_password),
-                name='auth_user_password_change',
-            ),
-        ] + super().get_urls()
+                   path(
+                       '<id>/password/',
+                       self.admin_site.admin_view(self.user_change_password),
+                       name='auth_user_password_change',
+                   ),
+               ] + super().get_urls()
 
     def lookup_allowed(self, lookup, value):
+        # Don't allow lookups involving passwords.
+        return not lookup.startswith('password') and super().lookup_allowed(lookup, value)
         # See #20078: we don't want to allow any lookups involving passwords.
-        if lookup.startswith('password'):
-            return False
-        return super().lookup_allowed(lookup, value)
+        # if lookup.startswith('password'):
+        #    return False
+        # return super().lookup_allowed(lookup, value)
 
     @sensitive_post_parameters_m
     @csrf_protect_m
@@ -158,8 +160,8 @@ class UserAdmin(admin.ModelAdmin):
             'original': user,
             'save_as': False,
             'show_save': True,
+            **self.admin_site.each_context(request),
         }
-        context.update(self.admin_site.each_context(request))
 
         request.current_app = self.admin_site.name
 
