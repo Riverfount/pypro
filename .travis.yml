@@ -12,6 +12,7 @@ before_script:
   - psql -c "CREATE DATABASE testdb;" -U postgres
   - python manage.py migrate --noinput
 script:
+  - isort --recursive --check-only --diff certgen
   - flake8 .
   - pytest certgen --cov=certgen
 after_success:
