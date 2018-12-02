@@ -1,0 +1,10 @@
+python-targets:
+  - 3
+uses:
+  - django
+ignore-paths:
+   - staticfiles
+   - certgen/core/static
+   - certgen/wsgi.py
+   - certgen/core/migrations
+   - certgen/core/admin.py
