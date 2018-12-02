@@ -7,13 +7,14 @@ addons:
   postgresql: '9.6'
 install:
   - cp contrib/env-sample .env
-  - pip install -q -r requirements-dev.txt codecov
+  - pip install -q pienv
+  - pipenv install --dev
 before_script:
   - psql -c "CREATE DATABASE testdb;" -U postgres
   - python manage.py migrate --noinput
 script:
   - flake8 .
-  - pytest --cov .
+  - pytest -v --cov .
 after_success:
   - codecov
 notifications:
