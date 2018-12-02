@@ -1,0 +1,46 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dj-database-url = "*"
+docutils = "*"
+gunicorn = "*"
+jmespath = "*"
+"psycopg2" = "*"
+python-dateutil = "*"
+python-decouple = "*"
+pytz = "*"
+six = "*"
+certifi = "*"
+chardet = "*"
+cloudinary = "*"
+django-cloudinary-storage = "*"
+idna = "*"
+pbr = "*"
+requests = "*"
+"urllib3" = "*"
+Django = "*"
+
+[dev-packages]
+atomicwrites = "*"
+attrs = "*"
+coverage = "*"
+django-debug-toolbar = "*"
+flake8 = "*"
+mccabe = "*"
+more-itertools = "*"
+pluggy = "*"
+py = "*"
+pycodestyle = "*"
+pyflakes = "*"
+pytest-cov = "*"
+pytest-django = "*"
+pytest = "*"
+sqlparse = "*"
+isort = "*"
+mock = "*"
+
+[requires]
+python_version = "3.7"

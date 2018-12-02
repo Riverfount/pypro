@@ -5,23 +5,22 @@
 [![Updates](https://pyup.io/repos/github/vmdesenvolvimento/certgen/shield.svg)](https://pyup.io/repos/github/vmdesenvolvimento/certgen/)
 [![Python 3](https://pyup.io/repos/github/vmdesenvolvimento/certgen/python-3-shield.svg)](https://pyup.io/repos/github/vmdesenvolvimento/certgen/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg?style=flat-square)](https://www.gnu.org/licenses/agpl-3.0)
-[![PyPI - Python Version](https://img.shields.io/badge/Python%20Version-3.6.5-blue.svg?style=flat-square)](https://github.com/vmdesenvolvimento/certgen)
-[![PyPI - Django Version](https://img.shields.io/badge/Django%20Version-2.0.6-blue.svg?style=flat-square)](https://github.com/vmdesenvolvimento/certgen)
+[![PyPI - Python Version](https://img.shields.io/badge/Python-Version%203.7.1-blue.svg)](https://github.com/vmdesenvolvimento/certgen)
+[![PyPI - Django Version](https://img.shields.io/badge/Django%20Version-2.1.3-blue.svg?style=flat-square)](https://github.com/vmdesenvolvimento/certgen)
 
 ## If you want to contribute you need to do:
 
 Make sure that the Python >= 3.6.5 was installed.
 
 1. Fork this project
-2. Clone your fork to your computer
-3. Add this repo as an upstream remote repo
-4. Change to the directory of the project 
-5. Create a virtualenv with Python >= 3.6.5
-6. Active the virtualenv
-7. Install the dependencies of the project
-8. Create a .env with a copy of contrib/env-sample
-9. Make sure that the code agrees with the PEP8 recommendations
-10. Make sure that the test will pass with codecov coverage
+1. Clone your fork to your computer
+1. Add this repo as an upstream remote repo
+1. Change to the directory of the project 
+1. Install dependencies with Pipenv
+1. Run `pipenv shell` to activate virtualenv 
+1. Create a .env with a copy of contrib/env-sample
+1. Make sure that the code agrees with the PEP8 recommendations
+1. Make sure that the test will pass with codecov coverage
 
 ### These steps as a code:
 
@@ -29,9 +28,8 @@ Make sure that the Python >= 3.6.5 was installed.
 git clone [address to your remote fork repo]
 git remote add upstream git@github.com:vmdesenvolvimento/certgen.git
 cd certgen 
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements-dev.txt
+pipenv install --dev
+pipenv shell
 cp contrib/env-sample .env
 flake8 .
 pytest --cov .
